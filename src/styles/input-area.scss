@@ -1,0 +1,47 @@
+@import './variables';
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .back-icon {
+    fill: white;
+    cursor: pointer;
+  }
+
+  .input-wrapper {
+    position: relative;
+    margin: 0px 30px;
+    display: flex;
+    align-items: center;
+
+    .input-symbol {
+      position: absolute;
+      left: 5px;
+    }
+
+    .input-field {
+      padding: 20px;
+      width: 300px;
+      background: transparent;
+      border-width: 0px 0px 1px 0px;
+      border-style: solid;
+      border-color: white;
+      outline: none;
+      caret-color: white;
+      color: white;
+    }
+  }
+
+  .submit {
+    background-color: $secondary-color;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
