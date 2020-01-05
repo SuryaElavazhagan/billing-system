@@ -1,0 +1,44 @@
+@import './variables';
+
+.bill-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .filter-bar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    .back-icon {
+      cursor: pointer;
+      fill: white;
+    }
+
+    h5 {
+      margin: 0px 10px;
+      font-weight: 400;
+      font-size: 20px;
+    }
+  }
+
+  .bill-table {
+    border: 2px solid $tertiary-color;
+    border-collapse: collapse;
+    thead, tr {
+      border: 2px solid $tertiary-color;
+    }
+    td, th {
+      text-align: center;
+      border-right: 2px solid $tertiary-color;
+    }
+  
+    .bill-total {
+      background-color: $tertiary-color;
+  
+      td:not(:last-child) {
+        border-right: 2px solid white;
+      }
+    }
+  }
+}
