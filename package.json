@@ -10,14 +10,21 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "electron": "^7.1.7",
+    "electron-is-dev": "^1.1.0",
+    "node-sass": "^4.13.0",
     "react": "^16.12.0",
+    "react-datepicker": "^2.10.1",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
+    "react-svg": "^11.0.6",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:web": "react-scripts start",
+    "build:web": "react-scripts build",
+    "start:app": "concurrently \"BROWSER=none yarn start:web\" \"wait-on http://localhost:3000 && yarn build:app && electron ./build/main.js\"",
+    "build:app": "tsc -p electron/tsconfig.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,5 +42,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-datepicker": "^2.10.0",
+    "concurrently": "^5.0.2",
+    "electron-builder": "^21.2.0",
+    "tslint": "^5.20.1",
+    "wait-on": "^3.3.0"
   }
 }
