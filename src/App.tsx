@@ -47,7 +47,7 @@ const App: React.FC = () => {
 
   function handleChange(value: number) {
     if (value !== Infinity) {
-      window.ipcRenderer.send('addData', selected, value);
+      window.ipcRenderer.send('add-data', selected, value);
     }
     setTitleAndSelected('none');
   }

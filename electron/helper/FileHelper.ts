@@ -26,7 +26,7 @@ export class FileHelper {
   }
 
   public init() {
-    ipcMain.on('addData', async (_: IpcMainEvent, type: BillTypes, amount: number) =>  {
+    ipcMain.on('add-data', async (_: IpcMainEvent, type: BillTypes, amount: number) =>  {
       await this.addData(type, amount);
     });
 
