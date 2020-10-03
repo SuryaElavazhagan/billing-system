@@ -63,7 +63,7 @@ const App: React.FC = () => {
               className='view-report'
               onClick={() => setTitleAndSelected('reports')}
             >
-                View Reports <kbd>V</kbd>
+                View Data <kbd>V</kbd>
             </button>
           </div>
         </Fragment>
