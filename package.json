@@ -8,6 +8,8 @@
     "name": "Surya Elavazhagan"
   },
   "dependencies": {
+    "@types/d3": "^5.16.2",
+    "d3": "^6.2.0",
     "react": "^16.12.0",
     "react-datepicker": "^2.10.1",
     "react-dom": "^16.12.0",
@@ -18,7 +20,7 @@
     "start:web": "react-scripts start",
     "build:web": "react-scripts build",
     "start:app": "concurrently \"BROWSER=none yarn start:web\" \"wait-on http://localhost:3000 && yarn build:app && electron ./build/main.js\"",
-    "build:app": "yarn build:web && electron-packager . billing-system --all",
+    "build:app": "tsc -p electron/tsconfig.json",
     "test": "react-scripts test"
   },
   "eslintConfig": {
@@ -37,23 +39,23 @@
     ]
   },
   "devDependencies": {
-    "@types/react-datepicker": "^2.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
+    "@types/react-datepicker": "^2.10.0",
     "@types/react-dom": "^16.9.0",
     "concurrently": "^5.0.2",
-    "electron-builder": "^21.2.0",
-    "tslint": "^5.20.1",
-    "wait-on": "^3.3.0",
-    "node-sass": "^4.13.0",
-    "electron-packager": "^14.2.0",
-    "typescript": "~3.7.2",
     "cross-zip": "^3.0.0",
     "electron": "^7.1.7",
-    "electron-is-dev": "^1.1.0"
+    "electron-builder": "^21.2.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-packager": "^14.2.0",
+    "node-sass": "^4.13.0",
+    "tslint": "^5.20.1",
+    "typescript": "~3.7.2",
+    "wait-on": "^3.3.0"
   }
 }
