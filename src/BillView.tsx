@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AppInfo, DailyBill } from '../electron/interfaces';
+import { generatePieChart } from './charts/pie';
 import './styles/bill-view.scss';
 
 interface BillViewProps {
@@ -75,7 +76,10 @@ const BillView: React.FC<BillViewProps> = (props) => {
         <td>{ totalOthers }</td>
       </tr>,
     );
-
+    const ref = document.getElementById('chart-area');
+    if (ref !== null) {
+      generatePieChart([totalFruits, totalJuice, totalOthers], ref);
+    }
     return rows;
   }
 
@@ -107,6 +111,7 @@ const BillView: React.FC<BillViewProps> = (props) => {
           onChange={handleFilterChange}
         />
       </div>
+      <div id="chart-area"></div>
       <table className='bill-table'>
         <thead>
           <tr>
